@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- adding single event listener instead of multiple-->
+    <ul id="menu">
+        <li><a id="home">home</a></li>
+        <li><a id="dashboard">dashboard</a></li>
+        <li><a id="more">More</a></li>
+
+    </ul>
+
+    <p>when user clicks on the button - onclick event triggers</p>
+    <button onclick="alert('onclick handler')">on click</button>
+    <p>when user mouse focus off the button - onmouseout event triggers</p>
+    <button onmouseout="alert('mouse out handler')">mouse out</button>
+    <br/>
+    <br/>
+    <button onmouseover="alert('mouse hover')">mouse hover</button>
+    <br/><br/>
+    <button onload="alert('on load event')">on load</button>
+    <br/><br/>
+    <button onkeyup="alert('on key up event')" >on key up</button>
+    <br/><br/>
+    <button onchange="alert('on change event')">on change event</button>
+
+    <button id="text"> click here</button>
+    <p id="test"></p>
+    <br/>
+    <br/>
+    <form action="#" id="form1">
+        <label for="input1">add input:</label>
+        <input id="input1" type="text" placeholder="enter anything"/>
+        <input id="btn1"type="submit">
+    </form>
+    <!-- promises: promises are used to run functions asynchronously and where there can be delay in getting data like API calls-->
+    <!--promises are created via promise constructor.-->
+    
+    <script>
+        document.getElementById("text").addEventListener('click', ()=> {
+            document.getElementById("test")
+            .innerText="click here button clicked and this output is shown";
+        });
+
+        let menu = document.querySelector("#menu");
+        menu.addEventListener('click', (event)=> {
+            let target = event.target;
+            console.log(`event: ${event}`)
+            console.log(target);
+            switch(target.id){
+                case 'home': console.log('home was clicked')
+                break;
+                case 'dashboard': console.log('dashboard was clicked');
+                break;
+                case 'more': console.log('more was clicked');
+                break;
+                default: console.log('other than home was clicked');
+            }
+        })
+
+        document.getElementById("form1").addEventListener('submit', (event)=>{
+            const msg = document.getElementById('input1').value;
+            alert(msg);
+
+        })
+
+        function getUsers() {
+            return new Promise ((resolve, reject) => {
+                setTimeout(()=> {
+                    resolve([
+                    {username:"user1", value: 20},
+                    {username:"user2", value: 12}
+                ]);
+            }, 1000)
+            })
+        }
+
+        function onFulfilled(users){
+            console.log(users);
+        }
+
+        const promise = getUsers();
+        promise.then(onFulfilled);
+    </script>
+</body>
+</html>

@@ -9,40 +9,60 @@
     <title>Document</title>
   </head>
   <body>
-    <!-- adding single event listener instead of multiple-->
-    <div class="nav-list">
-      <img src="background-img.jfif" alt="bg-img" />
-      <ul id="menu" class="nav-list__items">
-        <li class="nav-list__item"><a href="index.html" id="home">Home</a></li>
-        <li class="nav-list__item">
-          <a href="about.html" id="dashboard">About</a>
-        </li>
-        <li class="nav-list__item"><a href="more.html" id="more">More</a></li>
-      </ul>
-    </div>
+    <main>
+      <section>
+        <div class="nav-list">
+          <img src="background-img.jfif" alt="bg-img" />
+          <ul id="menu" class="nav-list__items">
+            <li class="nav-list__item">
+              <a href="index.html" id="home">Home</a>
+            </li>
+            <li class="nav-list__item">
+              <a href="about.html" id="dashboard">About</a>
+            </li>
+            <li class="nav-list__item">
+              <a href="more.html" id="more">More</a>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section>
+        <!-- adding single event listener instead of multiple-->
+        <div class="event-listeners">
+          <p>when user clicks on the button - onclick event triggers</p>
+          <button onclick="alert('onclick handler')">on click</button>
+          <p>
+            when user mouse focus off the button - onmouseout event triggers
+          </p>
+          <button onmouseout="alert('mouse out handler')">mouse out</button>
+          <br />
+          <br />
+          <button onmouseover="alert('mouse hover')">mouse hover</button>
+          <br /><br />
+          <button onload="alert('on load event')">on load</button>
+          <br /><br />
+          <button onkeyup="alert('on key up event')">on key up</button>
+          <br /><br />
+          <button onchange="alert('on change event')">on change event</button>
 
-    <p>when user clicks on the button - onclick event triggers</p>
-    <button onclick="alert('onclick handler')">on click</button>
-    <p>when user mouse focus off the button - onmouseout event triggers</p>
-    <button onmouseout="alert('mouse out handler')">mouse out</button>
-    <br />
-    <br />
-    <button onmouseover="alert('mouse hover')">mouse hover</button>
-    <br /><br />
-    <button onload="alert('on load event')">on load</button>
-    <br /><br />
-    <button onkeyup="alert('on key up event')">on key up</button>
-    <br /><br />
-    <button onchange="alert('on change event')">on change event</button>
-
-    <button id="text">click here</button>
-    <p id="test"></p>
-    <br />
-    <br />
-    <form action="#" id="form1">
-      <label for="input1">add input:</label>
-      <input id="input1" type="text" placeholder="enter anything" />
-      <input id="btn1" type="submit" />
-    </form>
+          <button id="text">click here</button>
+          <p id="test"></p>
+          <br />
+          <br />
+        </div>
+      </section>
+      <section>
+        <form action="#" id="form1" class="user-form">
+          <label for="input1">Add input:</label>
+          <input id="input1" type="text" placeholder="enter anything" />
+          <input id="btn1" type="submit" class="submit-btn"/>
+        </form>
+      </section>
+    </main>
+    <footer>
+      <nav>
+        
+      </nav>
+    </footer>
   </body>
 </html>
